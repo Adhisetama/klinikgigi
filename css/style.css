@@ -1,0 +1,178 @@
+/* LOGIN PAGE */
+body {
+    background-color: #eeeeee;
+}
+
+img.logo {
+    margin: 50px auto 0;
+    width: 200px;
+    height: 200px;
+}
+@media only screen and (max-width: 500px) {
+    h1.logintitle {
+    font-size: 29px;
+    text-align: center;
+    }
+
+}
+.logo-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo-container h1 {
+    z-index: 1;
+}
+div.container-relative {
+    /* display: relative; */
+    width: 100%;
+}
+/* keyframes */
+@keyframes loginbg {
+    0% {
+        top: 100%;
+    }70% {
+        top: 300px;
+    }
+    100% {
+        top: 400px;
+    }
+}
+
+div.login-bg {
+    box-shadow: 0 -8px 20px -7px rgba(29, 59, 114, 0.7);
+    position: absolute;
+    /* transform: translateY(70px); */
+    width: 100%;
+    bottom: 0;
+    animation: loginbg 0.7s ease 0.3s forwards;
+    background-image: url('../img/moroccan-flower-dark.png');
+}
+p.login-alert {
+    color: red;
+    font-style: italic;
+}
+
+
+
+
+/* INDEX PAGE */
+
+nav.nav {
+    box-sizing: border-box;
+    padding: 0 30px;
+    background-color: rgba(29, 59, 114, 0.7);
+    background-image: url(../img/moroccan-flower-dark.png);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 8px 13px -7px rgba(29, 59, 114, 0.7), inset 4px -10px 13px -13px rgba(255, 255, 255, 0.5);
+}
+
+.nav h9 {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.nav img.navlogo {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.322));
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+    height: 45px;
+}
+
+.content {
+    position: relative;
+    top: 90px;
+}
+
+td div.tablebutton {
+    width: 100%;
+    height: 100%;
+}
+
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+form button.searchbutton {
+    margin-left: 10px;
+}
+
+table tr.tablehead {
+    background-color: #1b508d;
+}
+
+/* FORM PAGE */
+
+body section div.form-container {
+    width: 70%;
+    margin: auto;
+}
+
+body section div.form-container h2 {
+    padding: 0 0 10px 20px;
+}
+
+body section form.cardform {
+    padding: 0 20px;
+}
+
+
+/* custom css */
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-around {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+button.btn-theme1 {
+    background-color: #20376b;
+    transition: 0.4s;
+}
+button.btn-theme1:hover {
+    background-color: #1b2e5c;
+}
+button.btn-theme2 {
+    background-color: #1b508d;
+    transition: 0.4s;
+}
+button.btn-theme2:hover {
+    background-color: #203870;
+}
+button.btn-theme3 {
+    background-color: #276dbd;
+    transition: 0.4s;
+}
+button.btn-theme3:hover {
+    background-color: #215b9c;
+}
+
+body .rounds {
+    box-sizing: border-box;
+    border-radius: 15px;
+    overflow: hidden;
+} 
+
+body table.rounds {
+    margin-bottom: 0;
+}
