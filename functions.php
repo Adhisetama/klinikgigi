@@ -23,7 +23,7 @@ function filter($table, $filter, $value) {
     return mysqli_fetch_assoc($result);
 }
 
-// sistem login 
+// sistem login akal akalan (sudah nggak dipake)
 function ceklogin($post) {
     if(isset($post['username'])==true) {
         $username = $post['username'];
@@ -146,10 +146,31 @@ function updatepasien($post, $get) {
 }
 
 
+function login($post) {
+    if(isset($post['submit'])===true) {
+      $username = $post['username'];
+      $pass = $post['password'];
+      $login = filter('accounts', 'username', $username);
+      // cek apakah username terdaftar
+      if($login == false) {
+        return 1;
+      }
+      // jika username benar, cek apakah password sesuai
+      else if($pass == $login['password']) {
+        $_SESSION['login'] = true;
+        $_SESSION['username'] = $login['username'];
+        header("Location: index.php");
+      } else {
+        return 2;
+      }
+    
+      return $login;
+    }
+}
+
+function ceksession() {
+    if( isset($_SESSION['login']) ===  true );
+    else header("Location: login.php");
+}
+
 ?>
-<!-- fungsi akal akalan login session (abandoned) -->
-<?php /* function keeplogin($login) { ?>
-<input type="hidden" name="username" value="<?= $login['username'] ?>"> 
-<input type="hidden" name="pass" value="<?= $login['password'] ?>"> 
-<input type="hidden" name="nama" value="<?= $login['nama'] ?>">
-<?php } */?>

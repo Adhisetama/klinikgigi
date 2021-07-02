@@ -1,5 +1,9 @@
 <?php 
+session_start();
+
   require "functions.php";
+  $login = login($_POST);
+
 ?>
 
 <!doctype html>
@@ -34,7 +38,7 @@
       <div class="shadow p-3 mb-5 bg-white card login col-10 col-md-8 col-lg-6 col-xl-5">
         <div class="card-body">
           <!-- form -->
-          <form method="post" action="index.php">
+          <form method="post" action="">
             <div class="form-group row">
               <label for="username" class="col-md-3">Username</label>
               <input type="text" class="form-control col-md-9" id="username" name="username">
@@ -45,10 +49,10 @@
             </div>
           <!-- alert -->
             <p class="login-alert">
-              <?php if(isset($_GET['auth'])==true) {
-                switch($_GET['auth']) {
-                  case "usernamenotfound": echo "Username tidak ditemukan"; break;
-                  case "wrongpassword": echo "Password yang anda masukkan salah"; break;
+              <?php if(isset($login)===true) {
+                switch($login) {
+                  case 1: echo "Username tidak ditemukan"; break;
+                  case 2: echo "Password yang anda masukkan salah"; break;
                   default: break;
                 }
               } ?>

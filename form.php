@@ -1,5 +1,7 @@
 <?php 
+session_start();
 require "functions.php";
+ceksession();
 
 // gerbang logika apakah dilakukan update atau insert
 if( isset($_GET['id']) === true ) {

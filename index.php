@@ -1,8 +1,11 @@
 <?php 
-// akal akalan sistem login
+session_start();
 require "functions.php";
-
-$login = ceklogin($_POST);
+ceksession();
+$user = $_SESSION['username'];
+$login = filter("accounts", "username", "$user");
+// akal akalan sistem login (udah nggak dipake)
+//$login = ceklogin($_POST);
 // if(isset($_POST['username'])==true) {
 //   $username = $_POST['username'];
 //   $pass = $_POST['pass'];

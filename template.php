@@ -1,5 +1,8 @@
 <?php 
-require "functions.php"
+session_start();
+require "functions.php";
+ceksession();
+
 ?>
 
 <!doctype html>

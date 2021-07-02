@@ -1,5 +1,8 @@
 <?php 
+session_start();
 require "functions.php";
+ceksession();
+
 // ambil variabel dari get id
 $id = $_GET['id'];
 $profilpasien = filter('daftarpasien', 'id', $id);
@@ -85,8 +88,7 @@ $recordpasien = recordsearch($id);
 						<a href="recordform.php?id=<?= $_GET['id'] ?>">
 							<button type="button" class="btn btn-theme3 text-light">Tambah Data</button>
 						</a>
-						</div>
-          </div>
+						</div> 
         </div>
       </div>
 

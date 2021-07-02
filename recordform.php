@@ -1,5 +1,8 @@
 <?php 
+session_start();
 require "functions.php";
+ceksession();
+
 // ambil variabel dari get id
 if( isset($_GET['id']) === true ) {
   $id = $_GET['id'];
