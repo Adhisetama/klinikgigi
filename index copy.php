@@ -100,7 +100,7 @@ if( isset($_POST['search']) == true ) {
               <?php $no = 1; foreach($datapasien as $row) : ?>
               <tr>
                 <th scope="row" class="fit"><?= $no ?></th>
-                <td><a class="no-dec" href="record.php?id=<?= $row['id'] ?>"><?= $row['namapasien'] ?></a></td>
+                <td><?= $row['namapasien'] ?></td>
                 <td><?= $row['nocm'] ?></td>
                 <td><?= $row['lahir'] ?></td>
                 <td><?= $row['alamat'] ?></td>

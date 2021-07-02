@@ -64,6 +64,18 @@ function caridatapasien($keyword) {
     return $rows;
 }
 
+// filter data rekam medis
+
+function recordsearch($id) {
+    global $conn;
+    $result = mysqli_query($conn, "SELECT * FROM rekammedis WHERE id = '$id'");
+    $rows = [];
+    while($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row; 
+    }
+    return $rows;
+}
+
 // fungsi tambah pasien
 
 function tambahpasien($post) {
@@ -79,6 +91,27 @@ function tambahpasien($post) {
         $query =
             "INSERT INTO daftarpasien VALUES
             ('', '$nocm', '$namapasien', '$lahir', '$alamat', '$telp')";
+        mysqli_query($conn, $query);
+        // utk cek apakah query berhasil
+        return mysqli_affected_rows($conn);
+    }
+}
+
+// fungsi tambah rekam medis
+
+function tambahrekam($post) {
+    if( isset($post['submitrekaman']) === true ) {
+        global $conn;
+        // ambil semua nilai post
+        $anamnesa = $post['anamnesa'];
+        $terapiobat = $post['terapiobat'];
+        $riwayatalergi = $post['riwayatalergi'];
+        $tindakan = $post['tindakan'];
+        $id = $post['id'];
+        // sql query
+        $query =
+            "INSERT INTO rekammedis VALUES
+            ('$anamnesa', '$terapiobat', '$riwayatalergi', '$tindakan', '$id')";
         mysqli_query($conn, $query);
         // utk cek apakah query berhasil
         return mysqli_affected_rows($conn);

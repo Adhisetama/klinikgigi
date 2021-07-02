@@ -126,8 +126,22 @@ body section form.cardform {
     padding: 0 20px;
 }
 
+/* form record */
+
+section.content h2.h2-card {
+    padding: 0 0 10px 20px;
+}
+
+div.pasiendata h5, div.pasiendata h6 {
+    text-align: center;
+    font-weight: 400;
+}
 
 /* custom css */
+
+.flex-col {
+    flex-direction: column;
+}
 
 .flex-center {
     display: flex;
@@ -175,4 +189,9 @@ body .rounds {
 
 body table.rounds {
     margin-bottom: 0;
+}
+
+a.no-dec {
+    text-decoration: none;
+    color: inherit;
 }

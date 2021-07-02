@@ -1,6 +1,6 @@
 <!-- <?php 
 
-// require 'functions.php';
+require 'functions.php';
 
 // // var_dump(filter('username', 'azka'));
 
@@ -31,11 +31,13 @@
 
 <?php 
 
-$result = mysqli_query($conn, "SELECT * FROM accounts WHERE username = blyat");
+$result = mysqli_query($conn, "SELECT * FROM rekammedis WHERE id = 1");
 
-var_dump($result)
+var_dump($result);
+//var_dump(mysqli_fetch_assoc($result))
 
-
+$tes = recordsearch('1');
+var_dump($tes)
 
 
 

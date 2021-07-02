@@ -93,7 +93,7 @@ function updateform($updatestring, $insertstring = "") {
 									<p class="login-alert">Terjadi kesalahan upload data</p>
 								<?php endif ?>
 								<button type="submit" class="btn btn-theme2 text-light" name="submitpasien"><?php updateform("Update", "Submit") ?></button>
-							</form>			
+							</form>
 						</div>
 					</div>
 				</div>
